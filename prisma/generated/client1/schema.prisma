@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client1"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://bootcamp:123@10.12.4.164:5432/day2"
+}
+
+model muser {
+  muserpk Int     @id(map: "muser_pk") @default(autoincrement())
+  name    String  @db.VarChar(100)
+  age     Int
+  alamat  String?
+}
